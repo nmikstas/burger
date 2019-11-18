@@ -41,11 +41,22 @@ $(function()
             location.reload();
         });
     });
-  
 
+    $(".change-devoured").on("click", function(event)
+    {
+        let id = $(this).attr("data-id");
+        console.log(id);
 
-
-    
-
+        // Send the PUT request.
+        $.ajax("/api/burger/" + id,
+        {
+            type: "PUT"
+        }).then(function()
+        {
+            console.log("Devoured burger: " + id);
+            // Reload the page to get the updated list
+            location.reload();
+        });
+    });
 });
   
