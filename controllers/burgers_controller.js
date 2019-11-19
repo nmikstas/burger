@@ -3,7 +3,7 @@ var router  = express.Router();
 var burger  = require("../models/burger.js");
 
 //Get all burgers from the database.
-router.get("*", function(req, res)
+router.get("/", function(req, res)
 {
     burger.allBurgers(function(data)
     {
